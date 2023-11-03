@@ -5,7 +5,7 @@ using FreightService.Repository;
 
 
 var flightsRepo = new FlightRepository();
-    flightsRepo.Init();  //JUST FOR LOAD SAMPLE DATA
+flightsRepo.Init();  //JUST FOR LOAD SAMPLE DATA
 
 var ordersRepo = new OrderRepository(@"C:\Users\Aradm\source\repos\FreightService\FreightService\coding-assigment-orders.json");
 ordersRepo.Init();   //JUST FOR LOAD SAMPLE DATA
@@ -14,15 +14,12 @@ var orderSchedulingService = new OrderSchedulingService(ordersRepo, flightsRepo)
 orderSchedulingService.AllocateFlightOrders();
 
 Console.WriteLine("User Story 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-
 ShowFlightSchedule(flightsRepo);
 
 Console.WriteLine("User Story 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-
 ShowFlightItineraries(orderSchedulingService.GetFlightItinaries());
 
 Console.ReadLine();
-
 
 static void ShowFlightSchedule(FlightRepository flightsRepo)
 {
