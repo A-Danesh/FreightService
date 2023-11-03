@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreightService", "FreightService\FreightService.csproj", "{EAEC71AF-4A73-4E17-80D7-CE943F8D1B0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreightService.Test", "FreightService.Test\FreightService.Test.csproj", "{6A74E210-37B8-40BB-B154-22E7C35CABB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAEC71AF-4A73-4E17-80D7-CE943F8D1B0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEC71AF-4A73-4E17-80D7-CE943F8D1B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEC71AF-4A73-4E17-80D7-CE943F8D1B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEC71AF-4A73-4E17-80D7-CE943F8D1B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A74E210-37B8-40BB-B154-22E7C35CABB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A74E210-37B8-40BB-B154-22E7C35CABB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A74E210-37B8-40BB-B154-22E7C35CABB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A74E210-37B8-40BB-B154-22E7C35CABB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0751F91-2280-4EBF-9184-F716DF5211B2}
+	EndGlobalSection
+EndGlobal
