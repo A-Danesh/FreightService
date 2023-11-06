@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using FreightService;
+using FreightService.Dto;
 using Newtonsoft.Json;
 
 namespace FreightService.Repository
@@ -25,7 +25,7 @@ namespace FreightService.Repository
             }
             catch (Exception e)
             {
-                throw new Exception(e.Message);
+                throw new Exception("Check JSON file address .." + e.Message);
             }
         }
 
@@ -36,8 +36,8 @@ namespace FreightService.Repository
 
         public Orderdata GetOrders(string flightNumber)
         {
-            var x = OrderData.Where(x => x.Key == flightNumber).ToDictionary(p => p.Key, p => p.Value);
-            return (Orderdata)x;
+            var orderData = OrderData.Where(x => x.Key == flightNumber).ToDictionary(p => p.Key, p => p.Value);
+            return (Orderdata)orderData;
         }
 
         public void AddOrder(string orderName, Order order)

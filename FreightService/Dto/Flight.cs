@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-namespace FreightService
+namespace FreightService.Dto
 {
     public class Flight : IFlight
     {
@@ -23,17 +23,17 @@ namespace FreightService
             Arrival = arrival;
             Day = day;
             MaxBoxCapacity = maxBoxCapacity;
+            BoxCapacity = maxBoxCapacity;
         }
 
         public void AddBox()
         {
-        
-            if (BoxCapacity < MaxBoxCapacity)
+
+            if (BoxCapacity > 0)
             {
-                BoxCapacity++;
-                //Boxes.Add(box);
+                BoxCapacity--;
             }
         }
-        public bool IsFull => BoxCapacity >= MaxBoxCapacity;
+        public bool IsFull => BoxCapacity == 0;
     }
 }

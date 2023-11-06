@@ -1,10 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-namespace FreightService
+namespace FreightService.Dto
 {
     public class FlightOrders
     {
-        public string FlghtNumber { get; set; }
+        public string? FlightNumber { get; set; }
         public string OrderNumber { get; set; }
     }
 }

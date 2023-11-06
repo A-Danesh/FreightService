@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using FreightService.Dto;
+
 namespace FreightService.Repository
 {
     public interface IFlightOrdersRepository

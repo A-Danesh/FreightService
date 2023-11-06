@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using FreightService;
+using FreightService.Dto;
 
 namespace FreightService.Repository
 {

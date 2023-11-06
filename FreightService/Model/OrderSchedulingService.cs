@@ -1,9 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using FreightService.Dto;
 using FreightService.Repository;
-using System.Security.Cryptography;
 
-namespace FreightService
+namespace FreightService.Model
 {
     public class OrderSchedulingService
     {
@@ -45,11 +45,11 @@ namespace FreightService
             LoadFlights();
             LoadOrders();
 
-            Flight selectedFlight;
+            Flight? selectedFlight;
             foreach (var order in OrderData)
             {
                 selectedFlight = FindAvailableFlight(order.Value.Destination);
-                FlightOrders.Add(new FlightOrders() { FlghtNumber = selectedFlight?.FlightNumber, OrderNumber = order.Key });
+                FlightOrders.Add(new FlightOrders() { FlightNumber = selectedFlight?.FlightNumber, OrderNumber = order.Key });
                 if (selectedFlight != null)
                     selectedFlight.AddBox();
             }
@@ -61,12 +61,12 @@ namespace FreightService
 
             var Itinariries =
                 (from flightOrder in FlightOrders
-                 join flight in flights on flightOrder.FlghtNumber equals flight.FlightNumber into tmp
+                 join flight in flights on flightOrder.FlightNumber equals flight.FlightNumber into tmp
                  from item in tmp.DefaultIfEmpty()
                  select new FlightItinerary()
                  {
                      OrderNumber = flightOrder.OrderNumber,
-                     FlightNumber = flightOrder?.FlghtNumber,
+                     FlightNumber = flightOrder?.FlightNumber,
                      Departure = item?.Departure,
                      Arrival = item?.Arrival,
                      Day = item?.Day
@@ -81,12 +81,6 @@ namespace FreightService
                 .Where(flight => !flight.IsFull && flight.Arrival == destination).FirstOrDefault();
 
             return selectedFlight;
-        }
-
-        private List<Flight> FlightCapacity(string destination)
-        {
-            // to do
-            return null;
         }
     }
 
